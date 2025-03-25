@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to save tasks to localStorage
     const saveTasks2 = () => {
         localStorage.setItem('tasks', JSON.stringify(tasks));
+        addTask
     };
 
     // Function to render tasks
