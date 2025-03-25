@@ -12,34 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addTask
     };
 
-    // Function to render tasks
-    const renderTasks = () => {
-        taskList.innerHTML = '';
-        tasks.forEach((task, index) => {
-            const li = document.createElement('li');
-            li.className = `task-item ${task.completed ? 'completed' : ''}`;
-            
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.className = 'checkbox';
-            checkbox.checked = task.completed;
-            checkbox.addEventListener('change', () => toggleTask(index));
 
-            const taskText = document.createElement('span');
-            taskText.className = 'task-text';
-            taskText.textContent = task.text;
-
-            const deleteButton = document.createElement('button');
-            deleteButton.className = 'delete-btn';
-            deleteButton.textContent = 'Delete';
-            deleteButton.addEventListener('click', () => deleteTask(index));
-
-            li.appendChild(checkbox);
-            li.appendChild(taskText);
-            li.appendChild(deleteButton);
-            taskList.appendChild(li);
-        });
-    };
 
     // Function to add a new task
     const addTask = () => {
